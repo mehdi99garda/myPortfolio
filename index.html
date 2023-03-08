@@ -33,17 +33,8 @@
                 <li class="social-item"><a class="social-link text-light"
                         href="https://web.facebook.com/profile.php?id=100034436314676" target="c"><i class="ti-facebook"
                             aria-hidden="true"></i></a></li>
-                
+
             </ul>
-            <div class="right-item">
-                <a id="en" class="translate">
-                    <img src="assets/imgs/en.jpg" class="img-flag">
-                </a>
-                &nbsp;
-                <a id="fr" class="translate">
-                    <img src="assets/imgs/fr.jpg" class="img-flag">
-                </a>
-            </div>
             <div class="header-content">
                 <h4 class="header-subtitle lang" key="hello">Hello, I am</h4>
                 <h1 class="header-title">El Mehdi El Garda</h1>
@@ -67,13 +58,13 @@
             <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link lang" key="home">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#about" class="nav-link lang" key="about">About</a>
                     </li>
                     <li class="nav-item">
                         <a href="#resume" class="nav-link lang" key="resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link lang" key="portofolio">Portfolio</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav brand">
@@ -85,24 +76,37 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#portfolio" class="nav-link lang" key="portofolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#blog" class="nav-link">Blog</a>
                     </li>
                     <li class="nav-item last-item">
                         <a href="#contact" class="nav-link lang" key="contact">Contact</a>
                     </li>
+                    <li class="nav-item last-item">
+                        <select class="select form-control edit-select nav-link langue translate">
+                            <option id="en" value="en" selected>
+                                <img src="assets/imgs/en.jpg" class="img-flag"> English
+                            </option>
+                            <option id="fr" value="fr">
+                                <img src="assets/imgs/fr.jpg" class="img-flag"> Français
+                            </option>
+                            <option id="es" value="es">
+                                <img src="assets/imgs/es.jpg" class="img-flag"> Español
+                            </option>
+                            <option id="de" value="de">
+                                <img src="assets/imgs/de.jpg" class="img-flag"> Deutsch
+                            </option>
+                        </select>
+                    </li>
                 </ul>
-                <div class="langue">
-                        <a id="en" class="translate">
-                            <img src="assets/imgs/en.jpg" class="img-flag">
-                        </a>
-                        &nbsp;
-                        <a id="fr" class="translate">
-                            <img src="assets/imgs/fr.jpg" class="img-flag">
-                        </a>
-                </div>
+                <!-- <div class="langue">
+                    <a id="en" class="translate">
+                        <img src="assets/imgs/en.jpg" class="img-flag">
+                    </a>
+                    &nbsp;
+                    <a id="fr" class="translate">
+                        <img src="assets/imgs/fr.jpg" class="img-flag">
+                    </a>
+                </div> -->
             </div>
         </div>
     </nav>
@@ -115,7 +119,8 @@
                 <p class="mt-20">Moroccan young man passionate about coding</p>
                 <a href="https://drive.google.com/file/d/1TVbmvhpTphvPesx-m2OJmKOwgvqUPaxf/view?usp=sharing"
                     target="cv">
-                    <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i><span class="lang" key="download">Download My CV</span></button>
+                    <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i><span class="lang"
+                            key="download">Download My CV</span></button>
                 </a>
             </div>
             <div class="col-lg-4 about-card">
@@ -160,7 +165,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-wordpress icon-lg" style="color: #21759b;"></i></div>
+                    <div class="col-1 text-danger pt-1"><i class="ti-wordpress icon-lg" style="color: #21759b;"></i>
+                    </div>
                     <div class="col-10 ml-auto mr-3">
                         <h6>WordPress</h6>
                         <p class="subtitle">Web Development</p>
@@ -194,7 +200,8 @@
     <!--Resume Section-->
     <section class="section" id="resume">
         <div class="container">
-            <h2 class="mb-5"><span class="text-danger lang" key="my">My</span> <span class="lang" key="resume">Resume</span></h2>
+            <h2 class="mb-5"><span class="text-danger lang" key="my">My</span> <span class="lang"
+                    key="resume">Resume</span></h2>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
                     <div class="card">
@@ -221,7 +228,8 @@
                             <hr>
                             <h6 class="title text-danger">March 2019</h6>
                             <P>C# Developer (Ado.net),<b>OCP SAFI</b></P>
-                            <P class="subtitle">Desktop application created with <b>C# (ADO.net SQLServer)</b> which allows the monitoring and management of OCP Equipment Park (Request for Reform).</P>
+                            <P class="subtitle">Desktop application created with <b>C# (ADO.net SQLServer)</b> which
+                                allows the monitoring and management of OCP Equipment Park (Request for Reform).</P>
                         </div>
                     </div>
                 </div>
@@ -340,7 +348,8 @@
     <!-- Portfolio Section -->
     <section class="section bg-custom-gray" id="portfolio">
         <div class="container">
-            <h1 class="mb-5"><span class="text-danger lang" key="my">My</span> <span class="lang" key="portofolio">Portfolio</span></h1>
+            <h1 class="mb-5"><span class="text-danger lang" key="my">My</span> <span class="lang"
+                    key="portofolio">Portfolio</span></h1>
             <div class="portfolio">
                 <div class="filters">
                     <a href="#" data-filter=".new" class="active lang" key="all">
@@ -371,7 +380,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-md-6 col-lg-4 mobile new">
+                    </div>
+                    <div class="col-md-6 col-lg-4 mobile new">
                         <div class="portfolio-item">
                             <img src="assets/imgs/blog1.jpg" class="img-fluid">
                             <div class="content-holder">
@@ -391,13 +401,13 @@
                             <img src="assets/imgs/odhiya_siteweb.jpg" class="img-fluid">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/odhiya_siteweb.jpg"></a>
-                                    <div class="text-holder">
-                                        <h6 class="title">SITEWEB</h6>
-                                        <p class="subtitle">Odhiya</p>
-                                        <a href="https://odhiya.com/fr/" target="cc">
-                                            <button class="btn btn-primary">go to website</button>
-                                        </a>
-                                    </div>
+                                <div class="text-holder">
+                                    <h6 class="title">SITEWEB</h6>
+                                    <p class="subtitle">Odhiya</p>
+                                    <a href="https://odhiya.com/fr/" target="cc">
+                                        <button class="btn btn-primary">go to website</button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -497,7 +507,8 @@
 
     <section class="section" id="blog">
         <div class="container">
-            <h2 class="mb-5"><span class="lang" key="latest">Latest</span>  <span class="text-danger lang" key="news">News</span></h2>
+            <h2 class="mb-5"><span class="lang" key="latest">Latest</span> <span class="text-danger lang"
+                    key="news">News</span></h2>
             <div class="row">
                 <div class="blog-card">
                     <div class="img-holder">
@@ -510,24 +521,27 @@
                             <a href="#">by: El Mehdi El Garda , Reda Mokere</a>
                         </p>
 
-                        <p>Tropical soils are facing a serious problem which is soil acidity. 
-                            The application of limestone can be a solution to increase the soil pH. 
-                            Limestone is a carbonate sedimentary rock that is the primary source of lime. 
-                            After applying an adequate quantity of this substance, 
+                        <p>Tropical soils are facing a serious problem which is soil acidity.
+                            The application of limestone can be a solution to increase the soil pH.
+                            Limestone is a carbonate sedimentary rock that is the primary source of lime.
+                            After applying an adequate quantity of this substance,
                             it will be dissolved and neutralizes the acidity by releasing a base into the soil.</p>
 
                         <p>
                             This application has two interfaces, a website and a mobile application <br>
                             🌐-Website was developed by JS, HTML & CSS <br>
-                            &nbsp; <object data="assets/imgs/github.svg" width="15" height="15"> </object>-Project on GitHub: <a href="http://bit.ly/3TAGXLF" target="cc">http://bit.ly/3TAGXLF</a> <br>
+                            &nbsp; <object data="assets/imgs/github.svg" width="15" height="15"> </object>-Project on
+                            GitHub: <a href="http://bit.ly/3TAGXLF" target="cc">http://bit.ly/3TAGXLF</a> <br>
                             📱-Application Mobile was developed by Flutter <br>
-                            &nbsp; <object data="assets/imgs/github.svg" width="15" height="15"> </object>-Project on GitHub: <a href="http://bit.ly/3X3Zv9N" target="cc">http://bit.ly/3X3Zv9N</a> <br>
+                            &nbsp; <object data="assets/imgs/github.svg" width="15" height="15"> </object>-Project on
+                            GitHub: <a href="http://bit.ly/3X3Zv9N" target="cc">http://bit.ly/3X3Zv9N</a> <br>
                         </p>
-                        <b><a href="#" class="read-more lang" key="read_more">Read more <i class="ti-angle-double-right"></i></a></b>
+                        <b><a href="#" class="read-more lang" key="read_more">Read more <i
+                                    class="ti-angle-double-right"></i></a></b>
                     </div>
                 </div><!-- end of blog wrapper -->
 
-                
+
 
             </div>
         </div>
@@ -538,7 +552,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="contact-form-card">
-                        <h4 class="contact-title lang"key=send_msg>Send a message</h4>
+                        <h4 class="contact-title lang" key=send_msg>Send a message</h4>
                         <form action="">
                             <div class="form-group">
                                 <input class="form-control" id="subject" type="text" placeholder="Subject *" required>
@@ -548,7 +562,8 @@
                                     required></textarea>
                             </div>
                             <div class="form-group ">
-                                <button type="submit" class="form-control btn btn-primary lang" key="send" onclick="sendMail()">Send</button>
+                                <button type="submit" class="form-control btn btn-primary lang" key="send"
+                                    onclick="sendMail()">Send</button>
                             </div>
                         </form>
                     </div>
@@ -561,7 +576,8 @@
                                 <i class="ti-mobile icon-md"></i>
                             </div>
                             <div class="col-10 ">
-                                <h6 class="d-inline"><span class="lang" key="phone">Phone</span> : <span class="text-muted">+212 6 21 64 26 43</span></h6>
+                                <h6 class="d-inline"><span class="lang" key="phone">Phone</span> : <span
+                                        class="text-muted">+212 6 21 64 26 43</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -569,7 +585,8 @@
                                 <i class="ti-map-alt icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline"><span class="lang" key="address">Address</span> : <span class="text-muted">Casablanca - Morocco</span></h6>
+                                <h6 class="d-inline"><span class="lang" key="address">Address</span> : <span
+                                        class="text-muted">Casablanca - Morocco</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
