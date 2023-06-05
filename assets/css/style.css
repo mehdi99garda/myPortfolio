@@ -11683,3 +11683,12 @@ pre .code {
 .edit-select{
   border: none;
 }
+div#contact {
+    border-radius: 25px 25px 0 0;
+}
+.contact-form-card {
+    border-radius: 10px;
+}
+.contact-info-card {
+    border-radius: 10px;
+}
