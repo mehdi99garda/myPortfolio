@@ -7,7 +7,7 @@ var arrLang = new Array();
         // English content
         arrLang['en']['hello'] = 'Hello, I am';
         arrLang['en']['title'] = 'Mobile(Flutter) & Web Front-end Developer';
-        arrLang['en']['print'] = 'Print Resume';
+        arrLang['en']['print'] = 'show Resume';
         arrLang['en']['home'] = 'Home';
         arrLang['en']['about'] = 'About';
         arrLang['en']['portofolio'] = 'Portfolio';

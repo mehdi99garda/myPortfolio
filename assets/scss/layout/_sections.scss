@@ -66,3 +66,25 @@
         }
     }
 }
+
+.technos {
+    gap: 20px;
+
+    .technology {
+        background: #333;
+        border: 1px solid $primary;
+        padding: 5px;
+        margin: 5px;
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .title-logo {
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}
