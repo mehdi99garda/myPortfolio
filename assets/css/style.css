@@ -12826,15 +12826,14 @@ div#contact {
   gap: 20px;
   display: flex;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 5px;
 }
 
 .technology {
   background: #333;
-  border: 1px solid red;
+  border: 1px solid #F85C70;
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -12853,9 +12852,14 @@ div#contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
 }
 
 .logo {
   height: 50px;
+  width: auto;
+}
+
+.title-logo {
+  font-weight: 600;
+  padding-top: 10px;
 }
