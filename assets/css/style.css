@@ -12865,7 +12865,7 @@ div#contact {
 }
 
 .card-body h6{
-  display: fle;
+  display: flex;
   justify-content: space-between;
 }
 
