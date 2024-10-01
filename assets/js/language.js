@@ -6,7 +6,7 @@ var arrLang = new Array();
 
         // English content
         arrLang['en']['hello'] = 'Hello, I am';
-        arrLang['en']['title'] = 'Mobile(Flutter) & Web Front-end Developer';
+        arrLang['en']['title'] = 'Full Stack Developer';
         arrLang['en']['print'] = 'show Resume';
         arrLang['en']['home'] = 'Home';
         arrLang['en']['about'] = 'About';
@@ -37,7 +37,7 @@ var arrLang = new Array();
 
         //french content
         arrLang['fr']['hello'] = 'Salut, je suis';
-        arrLang['fr']['title'] = 'Développeur Front-end Mobile(Flutter) et Web ';
+        arrLang['fr']['title'] = 'Développeur Full Stack';
         arrLang['fr']['print'] = 'Imprimer CV';
         arrLang['fr']['home'] = 'Accueil';
         arrLang['fr']['about'] = 'À propos';
@@ -67,7 +67,7 @@ var arrLang = new Array();
 
         //espanol content
         arrLang['es']['hello'] = 'Hola, yo soy';
-        arrLang['es']['title'] = 'Desarrollador web y front-end móvil (Flutter) ';
+        arrLang['es']['title'] = 'Desarrollador Full Stack';
         arrLang['es']['print'] = 'Imprimir currículum';
         arrLang['es']['home'] = 'bienvenida';
         arrLang['es']['about'] = 'A proposito';
@@ -97,7 +97,7 @@ var arrLang = new Array();
 
         //germany content
         arrLang['de']['hello'] = 'Hallo, ich bin';
-        arrLang['de']['title'] = 'Front-End Mobile (Flutter) und Web-Entwickler ';
+        arrLang['de']['title'] = 'Full-Stack-Entwickler';
         arrLang['de']['print'] = 'Lebenslauf drucken';
         arrLang['de']['home'] = 'Willkommen';
         arrLang['de']['about'] = 'in Bezug auf';

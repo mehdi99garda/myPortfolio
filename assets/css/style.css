@@ -12864,6 +12864,15 @@ div#contact {
   padding-top: 10px;
 }
 
+.card-body h6{
+  display: flex;
+  justify-content: space-between;
+}
+
+.duration {
+  font-size: 14px;
+}
+
 .line {
     display: inline-block;
     width: 100px;
