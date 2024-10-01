@@ -12863,3 +12863,22 @@ div#contact {
   font-weight: 600;
   padding-top: 10px;
 }
+
+.line {
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background-color: #fff;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.text-thanks {
+  color: #fff;
+  font-size: 30px;
+}
+
+.text-updated {
+  color: #cecece;
+  font-size: 12px;
+}
