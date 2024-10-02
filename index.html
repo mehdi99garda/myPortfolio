@@ -1,580 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="All infos you need about El Garda El Mehdi">
-    <meta name="author" content="Devcrud">
-    <title>El Mehdi El Garda</title>
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/js/jquery.min.js"> </script>
-    <script src="assets/js/language.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"
+            content="All infos you need about El Garda El Mehdi">
+        <meta name="author" content="Devcrud">
+        <title>El Mehdi El Garda</title>
+        <link rel="stylesheet"
+            href="assets/vendors/themify-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script type="text/javascript" src="assets/js/jquery.min.js"> </script>
+        <script src="assets/js/language.js"></script>
 
-</head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <header class="header">
-        <div class="container">
-            <ul class="social-icons pt-3">
-                <li class="social-item"><a class="social-link text-light"
-                        href="https://www.linkedin.com/in/el-mehdi-el-garda-53b132180/" target="c"><i
-                            class="ti-linkedin" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://github.com/mehdi99garda"
-                        target="c"><i class="ti-github" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="#" target="c"><i class="ti-google"
-                            aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light"
-                        href="https://www.instagram.com/mr.el.garda/" target="c"><i class="ti-instagram"
-                            aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light"
-                        href="https://web.facebook.com/profile.php?id=100034436314676" target="c"><i class="ti-facebook"
-                            aria-hidden="true"></i></a></li>
-
-            </ul>
-            <div class="header-content">
-                <h4 class="header-subtitle lang" key="hello">Hello, I am</h4>
-                <h1 class="header-title">El Mehdi El Garda</h1>
-                <h6 class="header-mono lang" key="title">Full Stack developer</h6>
-                <a href="https://bit.ly/47IWOQX" target="cv">
-                    <button class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i><span class="lang"
-                            key="print">show resume</span>
-                    </button>
-                </a>
+        <script src="assets/js/data/technologies.js"></script>
+        <script src="assets/js/data/portfolio.js"></script>
+        <script src="assets/js/data/experience.js"></script>
+        <script src="assets/js/data/education.js"></script>
+        <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // for technologies
+        const techContainer = document.querySelector('.technos');
+        let techHTML = '';
+        technologiesData.forEach(tech => {
+          if (tech.type === "image") {
+            techHTML += `
+              <div class="technology">
+                <div class="logo">
+                  <object data="${tech.image}" ${tech.width ? `width="${tech.width}"` : ''} ${tech.height ? `height="${tech.height}"` : ''}></object>
+                </div>
+                <span class="title-logo">${tech.name}</span>
+              </div>
+            `;
+          } else if (tech.type === "icon") {
+            techHTML += `
+              <div class="technology">
+                <div class="logo">
+                  <i class="${tech.icon} icon-lg" style="color: ${tech.color};"></i>
+                </div>
+                <span class="title-logo">${tech.name}</span>
+              </div>
+            `;
+          }
+        });
+        techContainer.innerHTML = techHTML;
+        // for projet portfolio
+        const portfolioContainer = document.getElementById('portfolio-container');
+        let portfolioHTML = '';
+        portfolioItems.forEach(item => {
+        portfolioHTML += `
+            <div class="col-md-6 col-lg-4 ${item.type} ${item.category || ''}">
+            <div class="portfolio-item">
+                <img src="${item.image}" class="img-fluid">
+                <div class="content-holder">
+                <a class="img-popup" href="${item.image}"></a>
+                <div class="text-holder">
+                    <h6 class="title">${item.title}</h6>
+                    <p class="subtitle">${item.subtitle}</p>
+                    ${item.link ? `<a href="${item.link.url}" target="cc">
+                    <button class="btn btn-primary">${item.link.text}</button>
+                    </a>` : ''}
+                </div>
+                </div>
             </div>
-        </div>
-    </header>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link lang" key="about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link lang" key="portofolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link lang" key="resume">Resume</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <img src="assets/imgs/avatar.jpg" alt="" class="brand-img">
-                    <li class="brand-txt">
-                        <h5 class="brand-title">El Mehdi El Garda</h5>
-                        <div class="brand-subtitle lang" key="title">Full Stack developer</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#blog" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item last-item">
-                        <a href="#contact" class="nav-link lang" key="contact">Contact</a>
-                    </li>
-                    <li class="nav-item last-item">
-                        <select class="select form-control edit-select nav-link langue translate">
-                            <option id="en" value="en" selected>English</option>
-                            <option id="fr" value="fr">Français</option>
-                            <option id="es" value="es">Español</option>
-                            <option id="de" value="de">Deutsch</option>
-                        </select>
-                    </li>
-                </ul>
             </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <div id="about" class="row about-section">
-            <div class="col-lg-3 about-card">
-                <h3 class="font-weight-light lang" key="personal_info">Personal Info</h3>
-                <span class="line mb-5"></span>
-                <ul class="mt40 info list-unstyled">
-                    <li><span class="lang" key="age">Age</span> :
-                        <script>document.write(new Date().getFullYear() - 1999)</script> <span class="lang"
-                            key="year">years old</span>
-                    </li>
-                    <li><span class="lang" key="email">Email</span> : mehdi99garda@gmail.com</li>
-                    <li><span class="lang" key="phone">Phone</span> : +212 6 21 64 26 43</li>
-                    <li><span class="lang" key="address">Address</span> : Casablanca , Morocco</li>
-                </ul>
+        `;
+        });
+        portfolioContainer.innerHTML = portfolioHTML;
+        // for experience
+        const experienceContainer = document.getElementById('experience-container');
+        let experienceHTML = '';
+        experienceItems.forEach(item => {
+        experienceHTML += `
+            <h6 class="title text-danger">${item.date} <span class="duration">${item.duration}</span></h6>
+            <p>${item.position}, <b>${item.company}</b></p>
+            <p class="subtitle">${item.description}</p>
+        `;
+        if (item.id != 1) {
+            experienceHTML += `<hr>`;
+        }
+        });
+        experienceContainer.innerHTML = experienceHTML;
+        // for education
+        const educationContainer = document.getElementById('education-container');
+        let educationHTML = '';
+        educationItems.forEach(item => {
+        educationHTML += `
+            <h6 class="title text-danger">${item.year}</h6>
+            <b>${item.institution}</b>
+            <p class="subtitle">${item.degree}, <br> ${item.description}</p>
+        `;
+        if (item.id != 1) {
+          educationHTML += `<hr>`;
+        }
+        });
+        educationContainer.innerHTML = educationHTML;
+      });
+    </script>
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+        <header class="header">
+            <div class="container">
                 <ul class="social-icons pt-3">
-                    <li class="social-item"><a class="social-link"
-                            href="https://www.linkedin.com/in/el-mehdi-el-garda-53b132180/" target="c"><i
-                                class="ti-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://github.com/mehdi99garda" target="c"><i
-                                class="ti-github" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="#" target="c"><i class="ti-google"
+                    <li class="social-item"><a class="social-link text-light"
+                            href="https://www.linkedin.com/in/el-mehdi-el-garda-53b132180/"
+                            target="c"><i
+                                class="ti-linkedin"
                                 aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://www.instagram.com/mehdi_garrrda/"
-                            target="c"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link"
-                            href="https://web.facebook.com/profile.php?id=100034436314676" target="c"><i
-                                class="ti-facebook" aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-light"
+                            href="https://github.com/mehdi99garda"
+                            target="c"><i class="ti-github"
+                                aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-light"
+                            href="#" target="c"><i class="ti-google"
+                                aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-light"
+                            href="https://www.instagram.com/mr.el.garda/"
+                            target="c"><i class="ti-instagram"
+                                aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-light"
+                            href="https://web.facebook.com/profile.php?id=100034436314676"
+                            target="c"><i class="ti-facebook"
+                                aria-hidden="true"></i></a></li>
+
                 </ul>
-            </div>
-            <div class="col-lg-9 about-card">
-                <h3 class="font-weight-light lang" key="expertise">My Expertise</h3>
-                <span class="line mb-5"></span>
-                <div class="technos">
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/jira.png" width="45" height="35"> </object></div>
-                        <span class="title-logo">JIRA</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/azure.png" height="50"> </object></div>
-                        <span class="title-logo">Azure DevOps</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/trello.png" height="50"> </object></div>
-                        <span class="title-logo">Trello</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/github.svg" height="50"> </object></div>
-                        <span class="title-logo">GitHub</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/gitlab.webp" height="50"> </object></div>
-                        <span class="title-logo">GitLab</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/Angular.png" height="50"> </object></div>
-                        <span class="title-logo">Angular</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/reactjs.webp" height="50"> </object></div>
-                        <span class="title-logo">ReactJS</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/Laravel.png" height="50"> </object></div>
-                        <span class="title-logo">Laravel</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/flutter.svg" height="50"> </object></div>
-                        <span class="title-logo">Flutter (mobile)</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/octoberCMS.png" height="50"> </object></div>
-                        <span class="title-logo">OctoberCMS</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><i class="ti-wordpress icon-lg" style="color: #21759b;"></i></div>
-                        <span class="title-logo">WordPress</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><i class="ti-html5 icon-lg" style="color: #ff0000;"></i></div>
-                        <span class="title-logo">HTML5</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><i class="ti-css3 icon-lg" style="color: #91219b;"></i></div>
-                        <span class="title-logo">CSS3</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/javascript.png" height="50"> </object></div>
-                        <span class="title-logo">JavaScript</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/php.png" height="50"> </object></div>
-                        <span class="title-logo">PHP</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/c_sharp.png" height="50"> </object></div>
-                        <span class="title-logo">C#</span>
-                    </div>
-                    <div class="technology">
-                        <div class="logo"><object data="assets/imgs/logo-company/asp.png" height="50"> </object></div>
-                        <span class="title-logo">ASP.net</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Section -->
-    <section class="section bg-custom-gray" id="portfolio">
-        <div class="container">
-            <h1 class="mb-5"><span class="text-danger lang" key="my">My</span> <span class="lang"
-                    key="portofolio">Portfolio</span></h1>
-            <div class="portfolio">
-                <div class="filters">
-                    <a href="#" data-filter=".new" class="active lang" key="all">
-                        All
-                    </a>
-                    <a href="#" data-filter=".mobile">
-                        Mobile
-                    </a>
-                    <a href="#" data-filter=".web">
-                        WebSite
-                    </a>
-                    <a href="#" data-filter=".desktop">
-                        Desktop
+                <div class="header-content">
+                    <h4 class="header-subtitle lang" key="hello">Hello, I
+                        am</h4>
+                    <h1 class="header-title">El Mehdi El Garda</h1>
+                    <h6 class="header-mono lang" key="title">Full Stack
+                        developer</h6>
+                    <a href="https://bit.ly/47IWOQX" target="cv">
+                        <button class="btn btn-primary btn-rounded"><i
+                                class="ti-printer pr-2"></i><span class="lang"
+                                key="print">show resume</span>
+                        </button>
                     </a>
                 </div>
-                <div class="portfolio-container">
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/ulime_siteweb.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/ulime_siteweb.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">SiteWeb</h6>
-                                    <p class="subtitle">U-LIME</p>
-                                    <a href="https://mehdi99garda.github.io/u-lime.github.io/" target="cc">
-                                        <button class="btn btn-primary">go to website</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mobile new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/blog1.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/blog1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">App Mobile</h6>
-                                    <p class="subtitle">U-LIME</p>
-                                    <a href="https://github.com/mehdi99garda/u-lime-flutter-app" target="cc">
-                                        <button class="btn btn-primary">source code in GitHub</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/odhiya_siteweb.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/odhiya_siteweb.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">SITEWEB</h6>
-                                    <p class="subtitle">Odhiya</p>
-                                    <a href="https://odhiya.com/fr/" target="cc">
-                                        <button class="btn btn-primary">go to website</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mobile new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/odhiya1.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/odhiya1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">App Mobile</h6>
-                                    <p class="subtitle">Odhiya</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/mizaequipement.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/mizaequipement.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">SITEWEB</h6>
-                                    <p class="subtitle">MizaEquipement </p>
-                                    <a href="https://www.mizaequipement.com/" target="cc">
-                                        <button class="btn btn-primary">go to website</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 web">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/bbus.png" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/bbus.png"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">SITEWEB</h6>
-                                    <p class="subtitle">Big Bus </p>
-                                    <a href="http://www.bigbus-marrakech.com/" target="cc">
-                                        <button class="btn btn-primary">go to website</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 web">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/site_otomoto.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/site_otomoto.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">SITEWEB</h6>
-                                    <p class="subtitle">Site otomoto</p>
-                                    <a href="http://otomoto-adv.com/fr/" target="cc">
-                                        <button class="btn btn-primary">go to website</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 desktop">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/app_qcm.jpg" class="img-fluid"
-                                alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/app_qcm.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Desktop</h6>
-                                    <p class="subtitle">Application QCM</p>
-                                    <a href="https://github.com/mehdi99garda/Application-QCM" target="cc">
-                                        <button class="btn btn-primary">source code in GitHub</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 desktop new">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/app_ocp.jpg" class="img-fluid">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/app_ocp.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Desktop</h6>
-                                    <p class="subtitle">OCP Application</p>
-                                    <a href="https://github.com/mehdi99garda/Demande-Reforme" target="cc">
-                                        <button class="btn btn-primary">source code in GitHub</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+        </header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white"
+            data-spy="affix" data-offset-top="510">
+            <div class="container">
+                <button class="navbar-toggler ml-auto" type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse mt-sm-20 navbar-collapse"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link lang"
+                                key="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#portfolio" class="nav-link lang"
+                                key="portofolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#resume" class="nav-link lang"
+                                key="resume">Resume</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav brand">
+                        <img src="assets/imgs/avatar.jpg" alt class="brand-img">
+                        <li class="brand-txt">
+                            <h5 class="brand-title">El Mehdi El Garda</h5>
+                            <div class="brand-subtitle lang" key="title">Full
+                                Stack developer</div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#blog" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item last-item">
+                            <a href="#contact" class="nav-link lang"
+                                key="contact">Contact</a>
+                        </li>
+                        <li class="nav-item last-item">
+                            <select
+                                class="select form-control edit-select nav-link langue translate">
+                                <option id="en" value="en"
+                                    selected>English</option>
+                                <option id="fr" value="fr">Français</option>
+                                <option id="es" value="es">Español</option>
+                                <option id="de" value="de">Deutsch</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div id="about" class="row about-section">
+                <div class="col-lg-3 about-card">
+                    <h3 class="font-weight-light lang"
+                        key="personal_info">Personal Info</h3>
+                    <span class="line mb-5"></span>
+                    <ul class="mt40 info list-unstyled">
+                        <li><span class="lang" key="age">Age</span> :
+                            <script>document.write(new Date().getFullYear() - 1999)</script>
+                            <span class="lang"
+                                key="year">years old</span>
+                        </li>
+                        <li><span class="lang" key="email">Email</span> :
+                            mehdi99garda@gmail.com</li>
+                        <li><span class="lang" key="phone">Phone</span> : +212 6
+                            21 64 26 43</li>
+                        <li><span class="lang" key="address">Address</span> :
+                            Casablanca , Morocco</li>
+                    </ul>
+                    <ul class="social-icons pt-3">
+                        <li class="social-item"><a class="social-link"
+                                href="https://www.linkedin.com/in/el-mehdi-el-garda-53b132180/"
+                                target="c"><i
+                                    class="ti-linkedin"
+                                    aria-hidden="true"></i></a></li>
+                        <li class="social-item"><a class="social-link"
+                                href="https://github.com/mehdi99garda"
+                                target="c"><i
+                                    class="ti-github"
+                                    aria-hidden="true"></i></a></li>
+                        <li class="social-item"><a class="social-link" href="#"
+                                target="c"><i class="ti-google"
+                                    aria-hidden="true"></i></a></li>
+                        <li class="social-item"><a class="social-link"
+                                href="https://www.instagram.com/mehdi_garrrda/"
+                                target="c"><i class="ti-instagram"
+                                    aria-hidden="true"></i></a></li>
+                        <li class="social-item"><a class="social-link"
+                                href="https://web.facebook.com/profile.php?id=100034436314676"
+                                target="c"><i
+                                    class="ti-facebook"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 about-card">
+                    <h3 class="font-weight-light lang" key="expertise">My
+                        Expertise</h3>
+                    <span class="line mb-5"></span>
+                    <div class="technos">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End of portfolio section -->
 
-    <!--Resume Section-->
-    <section class="section" id="resume">
-        <div class="container">
-            <h2 class="mb-5"><span class="text-danger lang" key="my">My</span> <span class="lang"
-                    key="resume">Resume</span></h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="mt-2">
-                                <h4><span class="lang" key="expertise">Expertise</span> (3 years)</h4>
-                                <span class="line"></span>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="title text-danger">May 2023 - Today <span class="duration">(+1 year)</span></h6>
-                            <p>Front-end Developer, <b>Xelops Thecnology</b></p>
-                            <p class="subtitle">
-                                Contribution to various projects in the fields of insurance,
-                                telecommunications and banking, providing innovative solutions adapted to
-                                the specific needs of each client.
-                            </p>
-                            <hr>
-                            <h6 class="title text-danger">March 2021 - October 2022 <span class="duration">(1 year & 7 months)</span></h6>
-                            <p>Front-end Developer, <b>ZtechEngineering SAFI</b></p>
-                            <p class="subtitle">
-                                6-month internship followed by 1 year and 1 month as an employee, during
-                                which I contributed to the creation of a sales and purchasing platform, including
-                                a mobile application to facilitate use and transactions.
-                            </p>
-                            <hr>
-                            <h6 class="title text-danger">December 2020 – March 2021 <span class="duration">(3 months)</span></h6>
-                            <p>FullStack Developer,<b>SGGI Marrakech</b></p>
-                            <p class="subtitle">
-                                3-month internship during which I developed websites in PHP for different
-                                sectors, including the sale of motorcycle parts and travel agencies.
-                            </p>
-                            <hr>
-                            <h6 class="title text-danger">March 2019 <span class="duration">(1 month)</span></h6>
-                            <p>C# Developer (Ado.net),<b>OCP SAFI</b></p>
-                            <p class="subtitle">Desktop application created with <b>C# (ADO.net SQLServer)</b> which
-                                allows the monitoring and management of OCP Equipment Park (Request for Reform).</p>
-                        </div>
+        <!-- Portfolio Section -->
+        <section class="section bg-custom-gray" id="portfolio">
+            <div class="container">
+                <h1 class="mb-5"><span class="text-danger lang"
+                        key="my">My</span> <span class="lang"
+                        key="portofolio">Portfolio</span></h1>
+                <div class="portfolio">
+                    <div class="filters">
+                        <a href="#" data-filter=".new" class="active lang"
+                            key="all">
+                            All
+                        </a>
+                        <a href="#" data-filter=".mobile">
+                            Mobile
+                        </a>
+                        <a href="#" data-filter=".web">
+                            WebSite
+                        </a>
+                        <a href="#" data-filter=".desktop">
+                            Desktop
+                        </a>
                     </div>
+                    <div class="portfolio-container"
+                        id="portfolio-container"></div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="mt-2">
-                                <h4>Education (BAC +5)</h4>
-                                <span class="line"></span>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="title text-danger">2022 - 2024</h6>
-                            <b>IT-Learning Compus - Casablanca</b>
-                            <p class="subtitle">Master's Degree, <br> application design and development
-                                engineering.</p>
-                            <hr>
-                            <h6 class="title text-danger">2019 - 2020</h6>
-                            <b>ENSA - Safi</b>
-                            <p class="subtitle">Bachelor's Degree, <br> information systems engineering and design </p>
-                            <hr>
-                            <h6 class="title text-danger">2017 - 2019</h6>
-                            <b>OFPPT - SAFI</b>
-                            <p class="subtitle">Software Development Technician</p>
-                            <hr>
-                            <h6 class="title text-danger">2016 - 2017</h6>
-                            <b>ElQods High School</b>
-                            <p class="subtitle">High School Degree - Chemaia</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section bg-dark py-5">
-        <div class="container text-center">
-            <h2 class="text-light mb-5 font-weight-normal"><span class="lang" key="available">I am available for freelance</span> <i class="ti-face-smile icon-md"></i></h2>
-            <a href="#contact"><button class="btn bg-primary text-light w-lg lang" key="contact_me">Contact me</button></a>
-        </div>
-    </section>
-
-    <section class="section" id="blog">
-        <div class="container">
-            <h2 class="mb-5"><span class="lang" key="latest">Latest</span> <span class="text-danger lang"
-                    key="news">News</span></h2>
-            <div class="row">
-                <div class="blog-card">
-                    <div class="img-holder">
-                        <img src="assets/imgs/blog1.jpg">
-                    </div>
-                    <div class="content-holder">
-                        <h6 class="title">U-LIME 📱/💻</h6>
-
-                        <p class="post-details">
-                            <a href="#">by: El Mehdi El Garda , Reda Mokere</a>
-                        </p>
-
-                        <p>Tropical soils are facing a serious problem which is soil acidity.
-                            The application of limestone can be a solution to increase the soil pH.
-                            Limestone is a carbonate sedimentary rock that is the primary source of lime.
-                            After applying an adequate quantity of this substance,
-                            it will be dissolved and neutralizes the acidity by releasing a base into the soil.</p>
-
-                        <p>
-                            This application has two interfaces, a website and a mobile application <br>
-                            🌐-Website was developed by JS, HTML & CSS <br>
-                            &nbsp; <object data="assets/imgs/github.svg" width="15" height="15"> </object>-Project on
-                            GitHub: <a href="http://bit.ly/3TAGXLF" target="cc">http://bit.ly/3TAGXLF</a> <br>
-                            📱-Application Mobile was developed by Flutter <br>
-                            &nbsp; <object data="assets/imgs/github.svg" width="15" height="15"> </object>-Project on
-                            GitHub: <a href="http://bit.ly/3X3Zv9N" target="cc">http://bit.ly/3X3Zv9N</a> <br>
-                        </p>
-                        <b><a href="#" class="read-more lang" key="read_more">Read more <i
-                                    class="ti-angle-double-right"></i></a></b>
-                    </div>
-                </div><!-- end of blog wrapper -->
-
-
-
-            </div>
-        </div>
-    </section>
-
-    <div class="section contact" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="contact-form-card">
-                        <h4 class="contact-title lang" key=send_msg>Send a message</h4>
-                        <form action="">
-                            <div class="form-group">
-                                <input class="form-control" id="subject" type="text" placeholder="Subject *" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" placeholder=" Message *" rows="7"
-                                    required></textarea>
-                            </div>
-                            <div class="form-group ">
-                                <button type="submit" class="form-control btn btn-primary lang" key="send"
-                                    onclick="sendMail()">Send</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h4 class="contact-title lang" key="get_in_touch">Get in touch</h4>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-mobile icon-md"></i>
-                            </div>
-                            <div class="col-10 ">
-                                <h6 class="d-inline"> : <span class="text-muted">+212 6 21 64 26 43</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-location-pin icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline"> : <span class="text-muted">Casablanca - Morocco</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-email icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline"> : <span class="text-muted">mehdi99garda@gmail.com</span></h6>
-                            </div>
-                        </div>
-                        <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://www.linkedin.com/in/el-mehdi-el-garda-53b132180/" target="c"><i
-                                        class="ti-linkedin" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://github.com/mehdi99garda" target="c"><i class="ti-github"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#" target="c"><i
-                                        class="ti-google" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://www.instagram.com/mehdi_garrrda/" target="c"><i class="ti-instagram"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark"
-                                    href="https://web.facebook.com/profile.php?id=100034436314676" target="c"><i
-                                        class="ti-facebook" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <section class="section bg-dark py-5">
-            <div class="container text-center mb-2">
-                <p class="text-thanks"><span class="line"></span>Thanks for scrolling <i class="ti-mouse icon-md"></i><span class="line"></span></p>
-                <span class="text-light text-updated"><i class="ti-reload icon-sm"></i> Updated on October 2024 <i class="ti-reload icon-sm"></i></span>
             </div>
         </section>
-    </footer>
+        <!-- End of portfolio section -->
 
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+        <!--Resume Section-->
+        <section class="section" id="resume">
+            <div class="container">
+                <h2 class="mb-5"><span class="text-danger lang"
+                        key="my">My</span> <span class="lang"
+                        key="resume">Resume</span></h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="mt-2">
+                                    <h4><span class="lang"
+                                            key="expertise">Expertise</span> (3
+                                        years)</h4>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="card-body"
+                                id="experience-container"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="mt-2">
+                                    <h4>Education (BAC +5)</h4>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="card-body"
+                                id="education-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- bootstrap 3 affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+        <section class="section bg-dark py-5">
+            <div class="container text-center">
+                <h2 class="text-light mb-5 font-weight-normal"><span
+                        class="lang" key="available">I am available for
+                        freelance</span> <i
+                        class="ti-face-smile icon-md"></i></h2>
+                <a href="#contact"><button
+                        class="btn bg-primary text-light w-lg lang"
+                        key="contact_me">Contact me</button></a>
+            </div>
+        </section>
 
-    <!-- Isotope  -->
-    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+        <section class="section" id="blog">
+            <div class="container">
+                <h2 class="mb-5"><span class="lang" key="latest">Latest</span>
+                    <span class="text-danger lang"
+                        key="news">News</span></h2>
+                <div class="row">
+                    <div class="blog-card">
+                        <div class="img-holder">
+                            <img src="assets/imgs/blog1.jpg">
+                        </div>
+                        <div class="content-holder">
+                            <h6 class="title">U-LIME 📱/💻</h6>
 
-    <script src="assets/js/javascript.js"></script>
+                            <p class="post-details">
+                                <a href="#">by: El Mehdi El Garda , Reda
+                                    Mokere</a>
+                            </p>
 
-</body>
+                            <p>Tropical soils are facing a serious problem which
+                                is soil acidity.
+                                The application of limestone can be a solution
+                                to increase the soil pH.
+                                Limestone is a carbonate sedimentary rock that
+                                is the primary source of lime.
+                                After applying an adequate quantity of this
+                                substance,
+                                it will be dissolved and neutralizes the acidity
+                                by releasing a base into the soil.</p>
+
+                            <p>
+                                This application has two interfaces, a website
+                                and a mobile application <br>
+                                🌐-Website was developed by JS, HTML & CSS <br>
+                                &nbsp; <object data="assets/imgs/github.svg"
+                                    width="15" height="15"> </object>-Project on
+                                GitHub: <a href="http://bit.ly/3TAGXLF"
+                                    target="cc">http://bit.ly/3TAGXLF</a> <br>
+                                📱-Application Mobile was developed by Flutter
+                                <br>
+                                &nbsp; <object data="assets/imgs/github.svg"
+                                    width="15" height="15"> </object>-Project on
+                                GitHub: <a href="http://bit.ly/3X3Zv9N"
+                                    target="cc">http://bit.ly/3X3Zv9N</a> <br>
+                            </p>
+                            <b><a href="#" class="read-more lang"
+                                    key="read_more">Read more <i
+                                        class="ti-angle-double-right"></i></a></b>
+                        </div>
+                    </div><!-- end of blog wrapper -->
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section contact" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="contact-form-card">
+                            <h4 class="contact-title lang" key=send_msg>Send a
+                                message</h4>
+                            <form action>
+                                <div class="form-group">
+                                    <input class="form-control" id="subject"
+                                        type="text" placeholder="Subject *"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message"
+                                        placeholder=" Message *" rows="7"
+                                        required></textarea>
+                                </div>
+                                <div class="form-group ">
+                                    <button type="submit"
+                                        class="form-control btn btn-primary lang"
+                                        key="send"
+                                        onclick="sendMail()">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="contact-info-card">
+                            <h4 class="contact-title lang"
+                                key="get_in_touch">Get in touch</h4>
+                            <div class="row mb-2">
+                                <div class="col-1 pt-1 mr-1">
+                                    <i class="ti-mobile icon-md"></i>
+                                </div>
+                                <div class="col-10 ">
+                                    <h6 class="d-inline"> : <span
+                                            class="text-muted">+212 6 21 64 26
+                                            43</span></h6>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1 pt-1 mr-1">
+                                    <i class="ti-location-pin icon-md"></i>
+                                </div>
+                                <div class="col-10">
+                                    <h6 class="d-inline"> : <span
+                                            class="text-muted">Casablanca -
+                                            Morocco</span></h6>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1 pt-1 mr-1">
+                                    <i class="ti-email icon-md"></i>
+                                </div>
+                                <div class="col-10">
+                                    <h6 class="d-inline"> : <span
+                                            class="text-muted">mehdi99garda@gmail.com</span></h6>
+                                </div>
+                            </div>
+                            <ul class="social-icons pt-4">
+                                <li class="social-item"><a
+                                        class="social-link text-dark"
+                                        href="https://www.linkedin.com/in/el-mehdi-el-garda-53b132180/"
+                                        target="c"><i
+                                            class="ti-linkedin"
+                                            aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a
+                                        class="social-link text-dark"
+                                        href="https://github.com/mehdi99garda"
+                                        target="c"><i class="ti-github"
+                                            aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a
+                                        class="social-link text-dark" href="#"
+                                        target="c"><i
+                                            class="ti-google"
+                                            aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a
+                                        class="social-link text-dark"
+                                        href="https://www.instagram.com/mehdi_garrrda/"
+                                        target="c"><i class="ti-instagram"
+                                            aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a
+                                        class="social-link text-dark"
+                                        href="https://web.facebook.com/profile.php?id=100034436314676"
+                                        target="c"><i
+                                            class="ti-facebook"
+                                            aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <section class="section bg-dark py-5">
+                <div class="container text-center mb-2">
+                    <p class="text-thanks"><span class="line"></span>Thanks for
+                        scrolling <i class="ti-mouse icon-md"></i><span
+                            class="line"></span></p>
+                    <span class="text-light text-updated"><i
+                            class="ti-reload icon-sm"></i> Updated on October
+                        2024 <i class="ti-reload icon-sm"></i></span>
+                </div>
+            </section>
+        </footer>
+
+        <!-- core  -->
+        <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+        <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+        <!-- bootstrap 3 affix -->
+        <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+        <!-- Isotope  -->
+        <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+
+        <script src="assets/js/javascript.js"></script>
+
+    </body>
 
 </html>

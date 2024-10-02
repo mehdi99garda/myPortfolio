@@ -12308,6 +12308,7 @@ p {
   opacity: 1;
   background: #F85C70;
   color: #fff;
+  border-radius: 15px;
 }
 
 .portfolio .portfolio-container .portfolio-item {
@@ -12736,22 +12737,13 @@ pre .code {
 }
 
 .contact {
-  background-image: url('../imgs/casablanca.jpg');
+  background-image: url('../imgs/email-gif.gif');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  min-height: 700px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  min-height: 600px;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 40px 0;
 }
