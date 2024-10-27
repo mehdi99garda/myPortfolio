@@ -2,7 +2,7 @@ const educationItems = [
     {
         id: 4,
         year: "2022 - 2024",
-        institution: "IT-Learning Compus - Casablanca",
+        institution: "FST - Settat",
         degree: "Master's Degree",
         description: "application design and development engineering."
     },
